@@ -1,0 +1,30 @@
+var vm= new Vue({
+	el:".main",
+	data:{
+		visibity:true,
+		data:'',
+		list:[
+			{
+				title:"写作业",
+				isChecked:false
+			},
+			{
+				title:"打篮球",
+				isChecked:true
+			}
+		]
+	},
+	methods:{
+		addTodo(){
+			this.list.push({
+				title:this.data,
+				isChecked:false
+			})
+			this.data="";
+		},
+		deleteTodo(todo){
+			var index=this.list.indexOf(todo);
+			this.list.splice(index,1)
+		}
+	}
+})
